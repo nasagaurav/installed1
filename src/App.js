@@ -34,7 +34,7 @@ export default function App() {
        <Route path="Order" element={<Order/>} />
        <Route path="Logout" element={<Logout/>} />
       
-       <Routes/>
+       </Routes>
       <Footer />
     </BrowserRouter>
   );
