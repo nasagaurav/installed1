@@ -14,9 +14,9 @@ function Header() {
         <Link to="Order">Order</Link>
         <Link to="Cart">Cart</Link>
         <Link to="Logout">Logout</Link>
-        <Link to="Errorpage">Errorpage</Link>
       </div>
     </Header>
   );
 }
 export default Header;
+ 

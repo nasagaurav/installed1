@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {getAllProducts,getAllFilters,getAllTags} from './Source'
 import './style.css';
 
 import Home from './pages/Home';
@@ -13,6 +14,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function App() {
+  const loadAll=()=>{
+    getAllProducts().then ((d)=>console.log('getAllProducts',d));
+    getAllFilters().then ((d)=>console.log('getAllProducts',d));
+    getAllTags().then ((d)=>console.log('getAllProducts',d));
+  };
+ 
+  useEffect(loadAll,[]);
   return (
     <BrowserRouter>
       <Header />
@@ -22,7 +30,7 @@ export default function App() {
        <Route path="Signup" element={<Signup/>} />
        <Route path="Order" element={<Order/>} />
        <Route path="Logout" element={<Logout/>} />
-       <Route path="*" element={<Errorpage/>} />
+      
        <Routes/>
       <Footer />
     </BrowserRouter>
