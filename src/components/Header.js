@@ -1,11 +1,22 @@
-import react from 'react'
+import react from 'react';
+import { Link } from 'react-router-dom';
 
+function Header() {
+  return (
+    <Header>
+      <div className="logo">Ecommerce</div>
 
-function Header()
-{
-	return <div> 
-	Header
-	   </div>
-
-  }
- export default Header 
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="Login">Login</Link>
+        <Link to="Signup">Signup</Link>
+        <Link to="Profile">Profile</Link>
+        <Link to="Order">Order</Link>
+        <Link to="Cart">Cart</Link>
+        <Link to="Logout">Logout</Link>
+        <Link to="Errorpage">Errorpage</Link>
+      </div>
+    </Header>
+  );
+}
+export default Header;
