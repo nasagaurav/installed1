@@ -1,8 +1,8 @@
 const initialState = {
-  filters:[],
-  tags:[],
-  Products:[],
-  }};
+  filters: [],
+  tags: [],
+  Products: [],
+};
 
 function reducer(state = initialState, action) {
   console.log('reducer', action);
