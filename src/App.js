@@ -19,9 +19,9 @@ export default function App() {
 
   const loadAll=()=>{
     const dispatch = 
-    getAllProducts().then ((d)=>useDispatch({type :'getAllProducts',payload: d}));
-    getAllFilters().then ((d)=>useDispatch({type:'getAllFilters',payload: d}));
-    getAllTags().then ((d)=>useDispatch({type:'getAllTags',payload: d}));
+    getAllProducts().then((d)=>useDispatch({type :'getAllProducts',payload: d}));
+    getAllFilters().then((d)=>useDispatch({type:'getAllFilters',payload: d}));
+    getAllTags().then((d)=>useDispatch({type:'getAllTags',payload: d}));
   };
  
   useEffect(loadAll,[]);
