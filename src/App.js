@@ -1,7 +1,7 @@
 import React from 'react';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {getAllProducts,getAllFilters,getAllTags} from './services'
+import { getAllProducts, getAllFilters, getAllTags } from './services';
 import './style.css';
 
 import Home from './pages/Home';
@@ -15,26 +15,27 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function App() {
-
-
-  const loadAll=()=>{
-
-    getAllProducts().then((d)=>useDispatch({type :'getAllProducts',payload: d}));
-    getAllFilters().then((d)=>useDispatch({type:'getAllFilters',payload: d}));
-    getAllTags().then((d)=>useDispatch({type:'getAllTags',payload: d}));
+  const loadAll = () => {
+    getAllProducts().then((d) =>
+      useDispatch({ type: 'getAllProducts', payload: d })
+    );
+    getAllFilters().then((d) =>
+      useDispatch({ type: 'getAllFilters', payload: d })
+    );
+    getAllTags().then((d) => useDispatch({ type: 'getAllTags', payload: d }));
   };
- 
-  useEffect(loadAll,[]);
-  return ( <BrowserRouter>
+
+  useEffect(loadAll, []);
+  return (
+    <BrowserRouter>
       <Header />
-       <Routes>
-       <Route path="" element={<Home/>} />
-       <Route path="Login" element={<Login/>} />
-       <Route path="Signup" element={<Signup/>} />
-       <Route path="Order" element={<Order/>} />
-       <Route path="Logout" element={<Logout/>} />
-      
-       </Routes>
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="Login" element={<Login />} />
+        <Route path="Signup" element={<Signup />} />
+        <Route path="Order" element={<Order />} />
+        <Route path="Logout" element={<Logout />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );

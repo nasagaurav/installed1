@@ -28,7 +28,8 @@ export const getAllUsers = async () => {
     .get('https://l-ecommerce-default-rtdb.firebaseio.com/users.json')
     .then((res) => res.data)
     .then((d) => {
-      transform(d);
+      return d;
+      // transform(d);
     })
     .catch((e) => []);
 
