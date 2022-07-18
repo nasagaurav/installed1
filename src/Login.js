@@ -15,7 +15,8 @@ function Login() {
   let condition = state.users.some(x=>x.email===data.email && x.password===data.password)
   let user = state.users.find(x=>x.email===data.email && x.password===data.password)
   if (condition){
-              toast('login sucessfull')
+              toast('welcome user:',+user.name)
+              dispatch ({type:'user-login',payload:user})
 
   }
   else{
