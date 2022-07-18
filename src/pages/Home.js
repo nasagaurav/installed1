@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Components/Card'
 import { useSelector, useDispatch } from 'react-redux';
+import Card from '../components/Card';
 function Home() {
   const state = useSelector((s) => s);
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ function Home() {
     <div>
       <div>
         {filters.map((item, index) => (
-          <button key={index}>{item}</button>
+          <Button key={index}>{item}</Button>
         ))}
       </div>
       <div>
