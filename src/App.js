@@ -15,11 +15,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function App() {
-  const dispatch=useDispatch()
+
+
   const loadAll=()=>{
-    getAllProducts().then ((d)=>console.log('getAllProducts',d));
-    getAllFilters().then ((d)=>console.log('getAllProducts',d));
-    getAllTags().then ((d)=>console.log('getAllProducts',d));
+    const dispatch = 
+    getAllProducts().then ((d)=>useDispatch(type :'getAllProducts',Payload: d}));
+    getAllFilters().then ((d)=>useDispatch(type:'getAllFilters',Payload: d}));
+    getAllTags().then ((d)=>useDispatch(type:'getAllTags',Payload: d}));
   };
  
   useEffect(loadAll,[]);
