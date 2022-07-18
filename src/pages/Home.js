@@ -21,7 +21,7 @@ function Home() {
       </div>
       <div>
         {products.map((item=>(
-	       <Card key ={item.id} {...item} />
+	       <Card key ={item.id} {...item}/>
 	))}
 	</div>
   </div>
