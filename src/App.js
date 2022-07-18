@@ -1,4 +1,5 @@
 import React from 'react';
+import {useDispatch} from ‘react-redux’
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {getAllProducts,getAllFilters,getAllTags} from './Source'
 import './style.css';
@@ -14,6 +15,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function App() {
+  const dispatch=useDispatch()
   const loadAll=()=>{
     getAllProducts().then ((d)=>console.log('getAllProducts',d));
     getAllFilters().then ((d)=>console.log('getAllProducts',d));

@@ -1,6 +1,3 @@
-
-
-
 export const getAllProducts = async () => {
   let data = await axios
     .get('https://l-ecommerce-default-rtdb.firebaseio.com/products.json')
