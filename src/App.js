@@ -1,7 +1,7 @@
 import React from 'react';
-import {useDispatch} from ‘react-redux’
+import {useDispatch} from 'react-redux'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import {getAllProducts,getAllFilters,getAllTags} from './Source'
+import {getAllProducts,getAllFilters,getAllTags} from './services'
 import './style.css';
 
 import Home from './pages/Home';
@@ -19,9 +19,9 @@ export default function App() {
 
   const loadAll=()=>{
     const dispatch = 
-    getAllProducts().then ((d)=>useDispatch(type :'getAllProducts',Payload: d}));
-    getAllFilters().then ((d)=>useDispatch(type:'getAllFilters',Payload: d}));
-    getAllTags().then ((d)=>useDispatch(type:'getAllTags',Payload: d}));
+    getAllProducts().then ((d)=>useDispatch({type :'getAllProducts',payload: d}));
+    getAllFilters().then ((d)=>useDispatch({type:'getAllFilters',payload: d}));
+    getAllTags().then ((d)=>useDispatch({type:'getAllTags',payload: d}));
   };
  
   useEffect(loadAll,[]);

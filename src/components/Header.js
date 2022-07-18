@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <Header>
+    <header>
       <div className="logo">Ecommerce</div>
 
       <div>
@@ -15,7 +15,7 @@ function Header() {
         <Link to="Cart">Cart</Link>
         <Link to="Logout">Logout</Link>
       </div>
-    </Header>
+    </header>
   );
 }
 export default Header;
