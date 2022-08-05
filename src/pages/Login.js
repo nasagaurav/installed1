@@ -1,5 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import {useSelector, usedispatch} from 'react-redux'
+import {toast} from 'react-toastify'
+import {useExists,usereDetails } from '../services'
 
 function Login() {
   const state = useSelector (s=>s); 
@@ -16,7 +19,7 @@ function Login() {
     if (usereExists(user,formData ))
     console.log (userDetails,(users,formData));
     else 
-  } console.log('not found' formData);
+  } toast ('not found' formData);
 
   return (
     <div>
