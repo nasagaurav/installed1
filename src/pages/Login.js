@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import {useSelector, usedispatch} from 'react-redux'
 import {toast} from 'react-toastify'
-import {useExists,usereDetails } from '../services'
+import {useExists,usereDetails,setStorage } from '../services'
 
 function Login() {
   const state = useSelector (s=>s); 
@@ -17,7 +17,12 @@ function Login() {
   } = useForm();
   const onSubmit = (formData) =>{
     if (usereExists(user,formData ))
-    console.log (userDetails,(users,formData));
+    const foundUser = (userDetails,(users,formData));
+    setStorage("uid",foundUser.id)
+    setStorage("name",foundUser.name)
+    setStorage("email",foundUser.email)
+    setStorage("phone",foundUser.phone)
+    setStorage("password",foundUser.)
     else 
     toast('not found'+formData);
   }
