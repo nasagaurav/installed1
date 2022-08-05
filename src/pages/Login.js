@@ -2,13 +2,22 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 function Login() {
+  const state = useSelector (s=>s); 
+  const dispatch = useDispatch();
+  const {users} = state;
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (formData) =>{
+    if (usereExists(user,formData ))
+    console.log (userDetails,(users,formData));
+    else 
+  } console.log('not found' formData);
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
