@@ -33,7 +33,7 @@ function Login() {
        
        <input placeholder="password" {...register('password', { required: true })} />
      
-       {errors.password <span>password is required</span>}
+       {errors.password <span>"password is required" </span>}
 
         <input type="submit" />
       </form>
