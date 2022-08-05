@@ -2,8 +2,9 @@ const initialState = {
   filters: [],
   tags: [],
   products: [],
-  loggedin:false,
-  user:null,
+  loggedin: false,
+  user: null,
+  users: [],
 };
 
 function reducer(state = initialState, action) {
@@ -15,6 +16,8 @@ function reducer(state = initialState, action) {
       return { ...state, tags: action.payload };
     case 'getAllFilter':
       return { ...state, filter: action.payload };
+    case 'getAllUsers':
+      return { ...state, users: action.payload };
     default:
       return state;
   }

@@ -18,16 +18,17 @@ import Footer from './components/Footer';
 export default function App() {
   const loadAll = () => {
     getAllProducts().then((d) =>
-      Dispatch({ type: 'getAllProducts', payload: d })
+      useDispatch({ type: 'getAllProducts', payload: d })
     );
-    getAllFilters= async ()=>{}.then((d) =>
-      Dispatch({ type: 'getAllFilters', payload: d })
-    );
+    getAllFilters=()=>{
+   .then((d) =>
+    useDispatch({ type: 'getAllFilters', payload: d })
+    );}
   getAllTags().then((d) =>
-   Dispatch({ type: 'getAllTags', payload: d }));
+   useDispatch({ type: 'getAllTags', payload: d }));
   };
   getAllUsers().then((d) => 
-  Dispatch({ type: 'Users', payload: d }));
+  useDispatch({ type: 'Users', payload: d }));
 };
 
   useEffect(loadAll, []);
