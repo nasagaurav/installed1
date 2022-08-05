@@ -18,7 +18,7 @@ function Header() {
         {loggedin && <Link to="Profile">Profile</Link>}
         {loggedin && <Link to="Order">Order</Link>}
         {loggedin && <Link to="Cart">Cart</Link>}
-        {loggedin && <Link to="Logout">Logout</Link>}
+        {loggedin && <Link to="Logout">Logout{user.name}</Link>}
       </div>
     </header>
   );

@@ -22,6 +22,8 @@ export const setStorage = (key, value) => {
 export const getStorage = (key) => {
   return localstorage.getItem(key);
 };
+export const removeStorage = (key) => {
+  localstorage.removeItem ("key")
 function img(id) {
   return `https://photospheric-damage.000webhostapp.com/a (${id}).jpg`;
 }
