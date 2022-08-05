@@ -1,7 +1,15 @@
+import axios from 'axios';
+
+export const setStorage = (key, value) => {
+  localStorage.setItem(key, value);
+};
+export const getStorage = (key) => {
+  return localstorage.getItem(key)  ;
+};
+function img(id) {
+  return `https://photospheric-damage.000webhostapp.com/a (${id}).jpg`;
+}
 export const getAllProducts = async () => {
-  function img(id) {
-    return `https://photospheric-damage.000webhostapp.com/a (${id}).jpg`;
-  }
   let data = await axios
     .get('https://l-ecommerce-default-rtdb.firebaseio.com/products.json')
     .then((res) => res.data)
