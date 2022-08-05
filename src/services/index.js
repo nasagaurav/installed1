@@ -4,7 +4,7 @@ export const setStorage = (key, value) => {
   localStorage.setItem(key, value);
 };
 export const getStorage = (key) => {
-  return localstorage.getItem(key)  ;
+  return localstorage.getItem(key);
 };
 function img(id) {
   return `https://photospheric-damage.000webhostapp.com/a (${id}).jpg`;
