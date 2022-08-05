@@ -23,7 +23,7 @@ function Login() {
     setStorage("email",foundUser.email)
     setStorage("phone",foundUser.phone)
     setStorage("password",foundUser.)
-    else 
+    else (
     toast('not found'+formData);
   }
   return (
