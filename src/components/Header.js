@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-router-dom';
+import { useNavigate } from 'react-redux';
 import { removeStorage } from '../services';
+import { toast } from 'react-toastify';
 
 function Header() {
+  const navigate = useNavigate();
   const state = useSelector((s) => s);
   const state = useDispatch();
   const { user, loggedin } = state;
@@ -13,7 +16,8 @@ function Header() {
     removeStorage('email');
     removeStorage('phone');
     removeStorage('password');
-    dispatch ({type:'logout'})
+    toast('you have been successfully Logout');
+    navigate('/logout');
   };
 
   return (
