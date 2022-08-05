@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Logout() {
-  return <div>Logout</div>;
+function Card() {
+  return <div>Card</div>;
 }
-export default Logout;
+export default Card;

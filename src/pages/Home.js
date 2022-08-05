@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '../Components/Card'
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../components/Card';
 function Home() {
@@ -21,12 +20,11 @@ function Home() {
         ))}
       </div>
       <div>
-        {products.map((item=>(
-	       <Card key ={item.id} {...item}/>
-	))}
-	</div>
-  </div>
-    
+        {products.map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
+      </div>
+    </div>
   );
 }
 export default Home;
