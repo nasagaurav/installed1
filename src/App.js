@@ -19,18 +19,17 @@ export default function App() {
   const loadAll = () => {
     getAllProducts().then((d) =>
       useDispatch({ type: 'getAllProducts', payload: d })
-    );
-    getAllFilters=()=>{
-   .then((d) =>
+  }
+    getAllFilters().then((d) =>
     useDispatch({ type: 'getAllFilters', payload: d })
-    );}
-  getAllTags().then((d) =>
-   useDispatch({ type: 'getAllTags', payload: d }));
-  };
-  getAllUsers().then((d) => 
-  useDispatch({ type: 'Users', payload: d }));
-};
-
+    )
+  getAllTags().then((d) =>{
+   useDispatch({ type: 'getAllTags', payload: d })
+  });
+  getAllUsers().then((d) =>{
+  useDispatch({ type: 'Users', payload: d })
+  });
+}
   useEffect(loadAll, []);
   return (
     <BrowserRouter>

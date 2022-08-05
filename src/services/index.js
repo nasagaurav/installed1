@@ -13,10 +13,7 @@ export const userExist=(users,formData)=>{
         (x) =>x.email===formData.email && x.password === formData.password
       );
     }
-      else 
-      return null;
-
-  }
+      else    return null;
 } ;
 
 export const setStorage = (key, value) => {
