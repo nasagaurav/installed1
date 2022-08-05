@@ -2,7 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { getAllProducts, getAllFilters, getAllTags,getAllUsers } from './services';
+import {
+  getAllProducts,
+  getAllFilters,
+  getAllTags,
+  getAllUsers,
+} from './services';
 import './style.css';
 
 import Home from './pages/Home';
@@ -19,17 +24,17 @@ export default function App() {
   const loadAll = () => {
     getAllProducts().then((d) =>
       useDispatch({ type: 'getAllProducts', payload: d })
-  }
+    );
     getAllFilters().then((d) =>
-    useDispatch({ type: 'getAllFilters', payload: d })
-    )
-  getAllTags().then((d) =>{
-   useDispatch({ type: 'getAllTags', payload: d })
-  });
-  getAllUsers().then((d) =>{
-  useDispatch({ type: 'Users', payload: d })
-  });
-}
+      useDispatch({ type: 'getAllFilters', payload: d })
+    );
+    getAllTags().then((d) => {
+      useDispatch({ type: 'getAllTags', payload: d });
+    });
+    getAllUsers().then((d) => {
+      useDispatch({ type: 'Users', payload: d });
+    });
+  };
   useEffect(loadAll, []);
   return (
     <BrowserRouter>

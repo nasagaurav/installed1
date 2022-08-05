@@ -20,20 +20,19 @@ function Login() {
     console.log (userDetails,(users,formData));
     else 
     toast('not found'+formData);
-
+  }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
        
         <input placeholder="email" {...register('email', { required: true })} />
       
-        {errors.email <span>email is required</span>}
+        {errors.email && <span>email is required</span>}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
        
        <input placeholder="password" {...register('password', { required: true })} />
      
-       {errors.password <span>"password is required" </span>}
+       {errors.password && <span>"password is required" </span>}
 
         <input type="submit" />
       </form>
@@ -41,4 +40,3 @@ function Login() {
   );
 }
 export default Login;
-,
