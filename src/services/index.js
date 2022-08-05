@@ -61,6 +61,15 @@ export const getAllUsers = async () => {
       // transform(d);
     })
     .catch((e) => []);
+    export const signupUsers = async (payload) => {
+      let data = await axios
+        .post('https://l-ecommerce-default-rtdb.firebaseio.com/users.json,payload')
+        .then((res) => res.data)
+        .then((d) => {
+          return d;
+          // transform(d);
+        })
+        .catch((e) => []);
 
   return data;
 };
