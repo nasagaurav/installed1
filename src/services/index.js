@@ -1,4 +1,7 @@
 export const getAllProducts = async () => {
+  function img(id) {
+    return `https://photospheric-damage.000webhostapp.com/a (${id}).jpg`;
+  }
   let data = await axios
     .get('https://l-ecommerce-default-rtdb.firebaseio.com/products.json')
     .then((res) => res.data)
